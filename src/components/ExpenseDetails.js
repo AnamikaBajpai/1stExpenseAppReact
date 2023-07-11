@@ -1,6 +1,6 @@
 import './ExpenseDetails.css';
 
-function ExpenseDetails(props) {
+const ExpenseDetails = (props) => {
     console.log(props);
 
     return (
