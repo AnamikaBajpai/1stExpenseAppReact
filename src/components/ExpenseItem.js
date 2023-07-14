@@ -1,32 +1,30 @@
-import ExpenseDate from './ExpenseDate';
-import ExpenseDetails from './ExpenseDetails'
- import './ExpenseItem.css';
+import React, { useState } from "react";
+import ExpenseDate from "./ExpenseDate";
+import ExpenseDetails from "./ExpenseDetails";
+import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
- //function clickHandler() {}
+  //function clickHandler() {}
 
- const clickHandler = () => {
-  const expenseItem= document.querySelector('.expense-item');
-  expenseItem.remove();
-  console.log('Clicked!!!');
- };
+  const [amount, setAmount] = useState(props.amount);
 
+  const clickHandler = () => {
+    console.log('Change expense to 100');
+    setAmount(100);
+  };
 
   return (
+    <div className="expense-item">
+      <ExpenseDate date={props.date} />
 
- <div className='expense-item'>
-  <ExpenseDate date = {props.date} />
- 
-      <div className='expense-item__description'>
-        <h2>{props.title}</h2>
-        <div className='expense-item__price'>${props.amount}</div>
+      <div className="expense-item__description">
+        {/* <h2>{amount}</h2> */}
+        <div className="expense-item__price">${amount}</div>
       </div>
-      <button onClick={clickHandler}>Delete Expense</button>
-     
+      <button onClick={clickHandler}>Change Expense</button>
+      
     </div>
- 
-  
   );
-}
+};
 
 export default ExpenseItem;
