@@ -5,9 +5,9 @@ const ExpenseForm1 = (props) => {
 
 //------------------------------------(1 way with single single state works)-------
 
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
 
   //   Another Way ---------------(2 way)
 
@@ -99,7 +99,7 @@ const ExpenseForm1 = (props) => {
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: new Date(enteredDate)
+      date: new Date(enteredDate),
 
     };
     props.onSaveExpenseData(expenseData);
